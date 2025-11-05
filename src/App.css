@@ -1,0 +1,219 @@
+
+:root {
+  /* Primary colours */
+  --uci-blue: #255799;         /* UCI Blue */
+  --uci-gold: #fecc07;         /* UCI Gold */
+  /* Secondary colours */
+  --uci-darkest-blue: #002244;
+  --uci-dark-blue:    #1b3d6d;
+  --uci-teal-blue:    #0083b3;
+  --uci-turquoise:    #00b0ca;
+  --uci-orange:       #f78d2d;
+  --uci-secondary-gold: #f0ab00;
+  --uci-dark-gray:    #555759;
+  --uci-light-gray:   #c6beb5;
+  /* Accent colours */
+  --uci-athletics-gold: #f8cf56;
+  --uci-light-yellow:    #f7eb5f;
+  --uci-green:           #3f9c35;
+  --uci-lime-green:      #7ab800;
+  --uci-royal-blue:      #00639e;
+  --uci-light-blue:      #6aa2b8;
+  --uci-bright-purple:   #7c109a;
+  --uci-magenta:         #d462ad;
+}
+
+/* Basic reset so the header isn't offset by default margins */
+* { box-sizing: border-box; }
+
+:root {
+  --header-height: 64px; /* keep header height consistent */
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Flex layout: header → main → footer */
+body, #root {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Main area grows to fill remaining space */
+main {
+  flex: 1;
+  padding: 2rem;
+  background: #fff;
+  padding-top: calc(var(--header-height) + 1rem);
+}
+
+/* Optional: smooth scroll for internal links */
+html {
+  scroll-behavior: smooth;
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-layout-header,
+.ant-layout-footer {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--uci-blue); /* UCI Blue */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--uci-blue) !important; 
+  color: white !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Site title */
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Footer */
+footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background: var(--uci-blue) !important;
+  padding: 16px;
+  text-align: center;
+  z-index: 2;
+  color: var(--uci-light-gray);
+  font-size: 18px;
+}
+
+footer a {
+  color: var(--uci-light-gray);
+  text-decoration: none;      
+  font-weight: 500;            
+  transition: color 0.2s ease; 
+}
+
+footer a:hover {
+  color: var(--uci-yellow); /* hover color */
+  text-decoration: underline;     /* optional hover underline */
+}
+
+/* Navigation links */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #fecc07; /* UCI Gold */
+}
+
+/* Mobile menu button (hidden by default) */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #255799;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav a {
+    margin: 0.75rem 0;
+  }
+}
+
+.publication {
+  margin-left: 50px;
+}
+
+.lab-members {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.member-row {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* All profile pictures have the same size */
+.profile-pic {
+  width: 100%;
+  max-width: 120px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+/* Optional text tweaks */
+.lab-members .ant-typography {
+  color: #255799; /* UCI Blue */
+}
+
+.lab-members h3,
+.lab-members .ant-typography h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #255799; /* UCI Blue */
+}
+
+.lab-members p {
+  margin: 0.5rem 0 0;
+}
