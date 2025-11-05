@@ -6,6 +6,7 @@ import LabMembers from "./pages/LabMembers";
 import SiteFooter from "./components/SiteFooter";
 import Investigator from "./pages/Investigator";
 import Publications from "./pages/Publications";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/members" element={<LabMembers />} />
           <Route path="/investigator" element={<Investigator />} />
           <Route path="/publications" element={<Publications />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <SiteFooter/>
