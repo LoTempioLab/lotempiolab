@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <Router basename="/lotempiolab">
+    <Router >
       <SiteHeader />
       <main>
         <Routes>
