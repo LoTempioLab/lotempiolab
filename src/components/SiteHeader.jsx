@@ -10,7 +10,7 @@ export default function SiteHeader() {
 
   return (
     <Header>
-      <h1>Lotempio Lab</h1>
+      <h1>LoTempio Lab</h1>
       <button
         className="menu-toggle"
         onClick={() => setIsOpen(!isOpen)}
