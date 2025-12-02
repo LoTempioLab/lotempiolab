@@ -8,7 +8,7 @@ const { Title, Paragraph } = Typography;
 export default function Investigator () {
     return (
         <div className="lab-members">
-        <Title level={2}>Principle Investigator</Title>
+        <Title level={2}>Principal Investigator</Title>
         <Divider />  
           <Row
             gutter={[24, 24]}               // spacing between cols
