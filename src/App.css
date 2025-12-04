@@ -176,6 +176,10 @@ nav a:hover {
   }
 }
 
+.about {
+  padding: 3rem;
+}
+
 .publication {
   margin-left: 50px;
 }
