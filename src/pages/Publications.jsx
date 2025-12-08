@@ -7,6 +7,10 @@ const { Title, Paragraph } = Typography;
 
 const pubs = [
   { 
+    citation: "Impact of the 23andMe bankruptcy on preserving the public benefit of scientific data. Nat Genet. 2025. LoTempio J, Donohue C, Moreno J, Santos Rutschman A, Sarnoff J, Sinha MS, Stoeger T, Contreras JL",
+    link: "https://doi.org/10.1038/s41588-025-02423-8"
+  },
+  { 
     citation: "Genome sequencing reveals the impact of pseudoexons in rare genetic disease. Genet Med. 2025 Sep 06; 101574. Pitsava G, Hawley M, Auriga L, de Dios I, Ko A, Marmolejos S, Almalvez M, Chen I, Scozzaro K, Zhao J, Barrick R, Mew NA, Fusaro VA, LoTempio J, Taylor M, Mestroni L, Graw S, Milewicz D, Guo D, Murdock DR, Bujakowska KM, UCI-GREGoR Consortium, Xiao C, Délot EC, Berger SI, Vilain E. PMID: 40927908.",
     link: "https://doi.org/10.1016/j.gim.2025.101574"
   },
