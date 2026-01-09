@@ -1,6 +1,6 @@
 export default function Research() {
   return (
-    <div className="about">
+    <div className="site-body">
     <h2>Basic science of human genome informatics</h2>
         <p>Human genomics is at an exciting inflection point. Long-read sequencing platforms are rapidly approaching the cost per base pair of short-read technologies, while new informatic tools are democratizing telomere-to-telomere genome assembly. How best to organize these high-quality genomes remains an open question, but graph-based representations offer distinct advantages.</p>
         <p>At the same time, the vast existing datasets of genomes and exomes offer opportunities to represent more human variation through their translational reuse. This new multi-platform, multi-omic environment creates fertile ground for developing novel resources, analytical tools, and biological discoveries.</p>

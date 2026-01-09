@@ -7,8 +7,11 @@ const { Title, Paragraph } = Typography;
 
 export default function Contact () {
     return (
-        <div className="lab-members">
+      <div className="lab-members">
         <Title level={2}>Contact LoTempio Lab</Title>
+        <p>We are always looking for interesting people to join us. If you think you would be a good fit, or would like to discuss a letter of invitation for a Fulbright grant or other international academic program please reach out.</p>
+        <p>If you are interested in doctoral studies, please apply to the University of California, Irvine CMB’s Genetics, Epigenetics, and Genomics Program here:</p>
+        <p><a href="https://cmb.uci.edu/" target="_blank">https://cmb.uci.edu/</a></p>
         <Divider />  
           <Row
             gutter={[24, 24]}               // spacing between cols
