@@ -11,6 +11,7 @@ import SiteFooter from "./components/SiteFooter";
 import Investigator from "./pages/Investigator";
 import Publications from "./pages/Publications";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 /**
  * Handles GitHub Pages direct-link redirects
@@ -43,6 +44,10 @@ function App() {
           <Route path="/investigator" element={<Investigator />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/contact" element={<Contact />} />
+        
+
+          {/* SPA 404 */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <SiteFooter />

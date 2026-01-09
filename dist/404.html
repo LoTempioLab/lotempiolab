@@ -2,7 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=./index.html" />
+    <title>Redirecting…</title>
+    <script>
+      // Preserve the original path
+      const redirect = location.pathname;
+      sessionStorage.setItem("redirect", redirect);
+      location.replace("/");
+    </script>
   </head>
   <body></body>
 </html>
