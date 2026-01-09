@@ -232,7 +232,7 @@ nav a:hover {
 
 .banner {
   width: 100vw;
-  height: 200px;
+  height: 400px;
   object-fit: cover;
 
   /* break out of main padding */
