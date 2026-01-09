@@ -15,7 +15,7 @@ export default function SiteFooter() {
       <Tooltip title="LoTempio Lab GitHub">
         <GithubOutlined />
         <a
-          href="https://github.com/jlotempiojr"
+          href="https://github.com/LoTempioLab"
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
