@@ -1,4 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// src/App.jsx
+
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 import SiteHeader from "./components/SiteHeader";
 import Home from "./pages/Home";
 import Research from "./pages/Research";
@@ -8,9 +12,28 @@ import Investigator from "./pages/Investigator";
 import Publications from "./pages/Publications";
 import Contact from "./pages/Contact";
 
+/**
+ * Handles GitHub Pages direct-link redirects
+ */
+function RedirectHandler() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const redirect = sessionStorage.getItem("redirect");
+    if (redirect) {
+      sessionStorage.removeItem("redirect");
+      navigate(redirect);
+    }
+  }, [navigate]);
+
+  return null;
+}
+
 function App() {
   return (
-    <Router >
+    <Router>
+      <RedirectHandler />
+
       <SiteHeader />
       <main>
         <Routes>
@@ -22,7 +45,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      <SiteFooter/>
+      <SiteFooter />
     </Router>
   );
 }
