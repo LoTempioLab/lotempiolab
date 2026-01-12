@@ -10,6 +10,7 @@ import LabMembers from "./pages/LabMembers";
 import SiteFooter from "./components/SiteFooter";
 import Investigator from "./pages/Investigator";
 import Publications from "./pages/Publications";
+import Symposia from "./pages/Symposia";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/research" element={<Research />} />
           <Route path="/members" element={<LabMembers />} />
           <Route path="/investigator" element={<Investigator />} />
+          <Route path="/symposia" element={<Symposia />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/contact" element={<Contact />} />
         

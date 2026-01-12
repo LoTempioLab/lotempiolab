@@ -24,6 +24,7 @@ export default function SiteHeader() {
         <Link to="/members" onClick={() => setIsOpen(false)}>Lab Members</Link>
         <Link to="/investigator" onClick={() => setIsOpen(false)}>Principal Investigator</Link>
         <Link to="/publications" onClick={() => setIsOpen(false)}>Publications</Link>
+        <Link to="/symposia" onClick={() => setIsOpen(false)}>Symposia</Link>
         <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
       </nav>
     </Header>
