@@ -241,3 +241,33 @@ nav a:hover {
 
   display: block;
 }
+
+/* Research page banner: full-width, fixed-height, cropped nicely */
+.research-banner-wrap {
+  width: 100%;
+  height: 320px;          /* adjust: 240–380 depending on taste */
+  overflow: hidden;
+  border-radius: 0;       /* keep as true banner; change if you want rounded */
+}
+
+.research-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* makes it behave like a banner */
+  object-position: center;
+  display: block;
+}
+
+/* Mobile: slightly shorter banner */
+@media (max-width: 576px) {
+  .research-banner-wrap {
+    height: 220px;
+  }
+}
+
+/* Publications banner: scale down so all covers are visible */
+.banner-publications {
+  max-height: 260px;      /* try 220–300 depending on taste */
+  object-fit: contain;   /* DO NOT crop */
+  background: #fff;      /* avoids dark gutters if image is shorter */
+}

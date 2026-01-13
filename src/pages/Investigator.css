@@ -1,0 +1,60 @@
+/* Keep photo left + text right with a clean gap */
+.investigator-row {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 32px; /* this is the “move text right” control */
+  }
+  
+  /* Photo: ~3in x 2in on desktop */
+  .investigator-photo {
+    width: 288px;
+    height: 192px;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 4px;
+    display: block;
+  }
+  
+  /* Prevent the fixed column from shrinking weirdly */
+  .investigator-photo-col {
+    flex: 0 0 288px;
+  }
+  
+  /* Mobile: stack */
+  @media (max-width: 575.98px) {
+    .investigator-row {
+      flex-wrap: wrap;
+      column-gap: 0;
+      row-gap: 16px;
+    }
+  
+    .investigator-photo-col,
+    .investigator-text-col {
+      flex: 0 0 100%;
+    }
+  
+    .investigator-photo {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+
+  details > summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  details > summary::after {
+    content: " ▸";
+    font-size: 0.9em;
+  }
+  
+  details[open] > summary::after {
+    content: " ▾";
+  }
+  

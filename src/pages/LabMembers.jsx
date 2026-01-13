@@ -33,7 +33,9 @@ export default function LabMembers() {
           {/* Info column */}
           <Col xs={24} sm={18} md={20} lg={21}>
             <Title level={3}>{m.name}</Title>
-            <Paragraph>{m.role}</Paragraph>
+            <Paragraph style={{ fontSize: "1.05rem", lineHeight: 1.6 }}>
+  {m.role}
+</Paragraph>
           </Col>
         </Row>
       ))}

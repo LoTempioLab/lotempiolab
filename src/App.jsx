@@ -11,8 +11,11 @@ import SiteFooter from "./components/SiteFooter";
 import Investigator from "./pages/Investigator";
 import Publications from "./pages/Publications";
 import Symposia from "./pages/Symposia";
+import Media from "./pages/Media";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Consortia from "./pages/Consortia";
+
 
 /**
  * Handles GitHub Pages direct-link redirects
@@ -44,8 +47,11 @@ function App() {
           <Route path="/members" element={<LabMembers />} />
           <Route path="/investigator" element={<Investigator />} />
           <Route path="/symposia" element={<Symposia />} />
+          <Route path="/media" element={<Media />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/consortia" element={<Consortia />} />
+
         
 
           {/* SPA 404 */}
