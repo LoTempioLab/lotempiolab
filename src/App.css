@@ -271,3 +271,100 @@ nav a:hover {
   object-fit: contain;   /* DO NOT crop */
   background: #fff;      /* avoids dark gutters if image is shorter */
 }
+
+/* ===== Lab Members: 2x2 grid tiles + modal ===== */
+
+.member-tile {
+  width: 100%;
+  padding: 0;
+  border: 1px solid #e9eef5;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.member-tile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(37, 87, 153, 0.35); /* UCI blue tint */
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.member-tile-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.member-tile-caption {
+  padding: 12px 14px;
+}
+
+.member-tile-name {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--uci-blue);
+  font-size: 1.05rem;
+}
+
+/* Modal layout */
+.member-modal-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.member-modal-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #e9eef5;
+}
+
+/* Email reveal button consistent with site */
+.email-reveal {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--uci-blue);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.email-reveal:hover {
+  text-decoration: underline;
+}
+
+.email-link {
+  color: var(--uci-blue);
+  font-weight: 500;
+}
+
+/* Make modal typography match your bodyText */
+.member-modal .ant-typography {
+  color: #213547;
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .member-tile-img {
+    height: 240px;
+  }
+
+  .member-modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .member-modal-img {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+  }
+}

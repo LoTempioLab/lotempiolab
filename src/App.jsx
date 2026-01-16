@@ -1,5 +1,3 @@
-// src/App.jsx
-
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -16,10 +14,6 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Consortia from "./pages/Consortia";
 
-
-/**
- * Handles GitHub Pages direct-link redirects
- */
 function RedirectHandler() {
   const navigate = useNavigate();
 
@@ -35,6 +29,11 @@ function RedirectHandler() {
 }
 
 function App() {
+  // ✅ ADD THIS (only once)
+  useEffect(() => {
+    document.dispatchEvent(new Event("prerender:ready"));
+  }, []);
+
   return (
     <Router>
       <RedirectHandler />
@@ -51,10 +50,6 @@ function App() {
           <Route path="/publications" element={<Publications />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/consortia" element={<Consortia />} />
-
-        
-
-          {/* SPA 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
