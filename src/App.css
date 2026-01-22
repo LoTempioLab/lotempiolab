@@ -101,6 +101,7 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
+  height: var(--header-height);
 
   display: flex;
   justify-content: space-between;
@@ -111,9 +112,7 @@ header {
 
   background-color: var(--uci-blue) !important;
   color: white !important;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  -webkit-transform: translateZ(0);
 }
 
 header h1 {
@@ -129,6 +128,7 @@ nav {
 
 nav a {
   color: white;
+  -webkit-text-fill-color: white; /* iOS WebKit text visibility fix */
   text-decoration: none;
   margin-left: 1.5rem;
   font-weight: 500;
@@ -358,6 +358,11 @@ footer a:hover {
   }
 
   nav a {
+    display: block;
+    background-color: var(--uci-dark-blue);
+    color: #ffffff !important;      /* force text color */
+    -webkit-text-fill-color: #fff;  /* iOS Safari fix */
+    
     padding: 0.75rem 1.25rem;
     margin: 0;
     border-left: 4px solid transparent;
