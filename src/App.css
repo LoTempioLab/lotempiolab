@@ -1,37 +1,53 @@
- /* src/App.css */
+/* =========================================================
+   src/App.css
+   ========================================================= */
 
+/* =========================
+   CSS Variables
+   ========================= */
 :root {
+  /* Layout */
+  --header-height: 64px;
+
   /* Primary colours */
-  --uci-blue: #255799;         /* UCI Blue */
-  --uci-gold: #fecc07;         /* UCI Gold */
+  --uci-blue: #255799;
+  --uci-gold: #fecc07;
+
   /* Secondary colours */
   --uci-darkest-blue: #002244;
-  --uci-dark-blue:    #1b3d6d;
-  --uci-teal-blue:    #0083b3;
-  --uci-turquoise:    #00b0ca;
-  --uci-orange:       #f78d2d;
+  --uci-dark-blue: #1b3d6d;
+  --uci-teal-blue: #0083b3;
+  --uci-turquoise: #00b0ca;
+  --uci-orange: #f78d2d;
   --uci-secondary-gold: #f0ab00;
-  --uci-dark-gray:    #555759;
-  --uci-light-gray:   #c6beb5;
+  --uci-dark-gray: #555759;
+  --uci-light-gray: #c6beb5;
+
   /* Accent colours */
   --uci-athletics-gold: #f8cf56;
-  --uci-light-yellow:    #f7eb5f;
-  --uci-green:           #3f9c35;
-  --uci-lime-green:      #7ab800;
-  --uci-royal-blue:      #00639e;
-  --uci-light-blue:      #6aa2b8;
-  --uci-bright-purple:   #7c109a;
-  --uci-magenta:         #d462ad;
+  --uci-light-yellow: #f7eb5f;
+  --uci-green: #3f9c35;
+  --uci-lime-green: #7ab800;
+  --uci-royal-blue: #00639e;
+  --uci-light-blue: #6aa2b8;
+  --uci-bright-purple: #7c109a;
+  --uci-magenta: #d462ad;
 }
 
-/* Basic reset so the header isn't offset by default margins */
-* { box-sizing: border-box; }
-
-:root {
-  --header-height: 64px; /* keep header height consistent */
+/* =========================
+   Reset & Base
+   ========================= */
+* {
+  box-sizing: border-box;
 }
 
-html, body, #root {
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -40,15 +56,15 @@ html, body, #root {
 }
 
 /* Flex layout: header → main → footer */
-body, #root {
+body,
+#root {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-
 }
 
-/* Main area grows to fill remaining space */
+/* =========================
+   Layout
+   ========================= */
 main {
   flex: 1;
   padding: 2rem;
@@ -56,13 +72,9 @@ main {
   padding-top: calc(var(--header-height) + 1rem);
 }
 
-/* Optional: smooth scroll for internal links */
-html {
-  scroll-behavior: smooth;
-}
-
 .ant-layout {
   min-height: 100vh;
+  min-height: 100dvh; /* iOS-safe */
 }
 
 .ant-layout-header,
@@ -70,60 +82,46 @@ html {
   font-family: 'Montserrat', sans-serif;
 }
 
-h1, h2, h3, h4 {
+/* =========================
+   Typography
+   ========================= */
+h1,
+h2,
+h3,
+h4 {
   font-weight: 600;
-  color: var(--uci-blue); /* UCI Blue */
+  color: var(--uci-blue);
 }
 
-/* Header */
+/* =========================
+   Header & Navigation
+   ========================= */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--uci-blue) !important; 
-  color: white !important;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 1rem 2rem;
+
+  background-color: var(--uci-blue) !important;
+  color: white !important;
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateZ(0);
 }
 
-/* Site title */
 header h1 {
   margin: 0;
   font-size: 1.5rem;
   color: white;
 }
 
-/* Footer */
-footer {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  background: var(--uci-blue) !important;
-  padding: 16px;
-  text-align: center;
-  z-index: 2;
-  color: var(--uci-light-gray);
-  font-size: 18px;
-}
-
-footer a {
-  color: var(--uci-light-gray);
-  text-decoration: none;      
-  font-weight: 500;            
-  transition: color 0.2s ease; 
-}
-
-footer a:hover {
-  color: var(--uci-yellow); /* hover color */
-  text-decoration: underline;     /* optional hover underline */
-}
-
-/* Navigation links */
 nav {
   display: flex;
   align-items: center;
@@ -138,46 +136,57 @@ nav a {
 }
 
 nav a:hover {
-  color: #fecc07; /* UCI Gold */
+  color: var(--uci-gold);
 }
 
-/* Mobile menu button (hidden by default) */
+/* Hamburger button */
 .menu-toggle {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  margin-left: 1rem;
+
   background: none;
   border: none;
   color: white;
   cursor: pointer;
 }
 
-/* Responsive layout for small screens */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    background-color: #255799;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 1rem;
-  }
+/* =========================
+   Footer
+   ========================= */
+footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
 
-  nav.open {
-    display: flex;
-  }
+  background: var(--uci-blue) !important;
+  padding: 16px;
+  text-align: center;
 
-  .menu-toggle {
-    display: block;
-  }
-
-  nav a {
-    margin: 0.75rem 0;
-  }
+  z-index: 2;
+  font-size: 18px;
+  color: var(--uci-light-gray);
 }
 
-.site-body {
+footer a {
+  color: var(--uci-light-gray);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--uci-gold);
+  text-decoration: underline;
+}
+
+/* =========================
+   Page Containers
+   ========================= */
+.site-body,
+.lab-members {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
@@ -187,19 +196,57 @@ nav a:hover {
   margin-left: 50px;
 }
 
-.lab-members {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
+/* =========================
+   Images & Media
+   ========================= */
+.news {
+  max-width: 100%;
+  height: auto;
 }
 
+/* Full-width banner */
+.banner {
+  width: 100vw;
+  height: 500px;
+  object-fit: cover;
+
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  display: block;
+}
+
+/* Research banner */
+.research-banner-wrap {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.research-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Publications banner */
+.banner-publications {
+  max-height: 260px;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* =========================
+   Lab Members
+   ========================= */
 .member-row {
   border-bottom: 1px solid #eee;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
 
-/* All profile pictures have the same size */
 .profile-pic {
   width: 100%;
   max-width: 120px;
@@ -209,86 +256,24 @@ nav a:hover {
   object-fit: cover;
 }
 
-/* Optional text tweaks */
-.lab-members .ant-typography {
-  color: #255799; /* UCI Blue */
-}
-
-.lab-members h3,
-.lab-members .ant-typography h3 {
-  margin: 0;
-  font-weight: 600;
-  color: #255799; /* UCI Blue */
-}
-
-.lab-members p {
-  margin: 0.5rem 0 0;
-}
-
-.news {
-  max-width: 100%;
-  height: auto;
-}
-
-.banner {
-  width: 100vw;
-  height: 500px;
-  object-fit: cover;
-
-  /* break out of main padding */
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-
-  display: block;
-}
-
-/* Research page banner: full-width, fixed-height, cropped nicely */
-.research-banner-wrap {
-  width: 100%;
-  height: 320px;          /* adjust: 240–380 depending on taste */
-  overflow: hidden;
-  border-radius: 0;       /* keep as true banner; change if you want rounded */
-}
-
-.research-banner {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* makes it behave like a banner */
-  object-position: center;
-  display: block;
-}
-
-/* Mobile: slightly shorter banner */
-@media (max-width: 576px) {
-  .research-banner-wrap {
-    height: 220px;
-  }
-}
-
-/* Publications banner: scale down so all covers are visible */
-.banner-publications {
-  max-height: 260px;      /* try 220–300 depending on taste */
-  object-fit: contain;   /* DO NOT crop */
-  background: #fff;      /* avoids dark gutters if image is shorter */
-}
-
-/* ===== Lab Members: 2x2 grid tiles + modal ===== */
-
+/* Tile layout */
 .member-tile {
   width: 100%;
-  padding: 0;
   border: 1px solid #e9eef5;
   border-radius: 12px;
   background: #fff;
   overflow: hidden;
   cursor: pointer;
   text-align: left;
-  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+
+  transition: transform 0.12s ease,
+              box-shadow 0.12s ease,
+              border-color 0.12s ease;
 }
 
 .member-tile:hover {
   transform: translateY(-2px);
-  border-color: rgba(37, 87, 153, 0.35); /* UCI blue tint */
+  border-color: rgba(37, 87, 153, 0.35);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
@@ -296,7 +281,6 @@ nav a:hover {
   width: 100%;
   height: 320px;
   object-fit: cover;
-  object-position: center;
   display: block;
 }
 
@@ -305,13 +289,12 @@ nav a:hover {
 }
 
 .member-tile-name {
-  display: inline-block;
   font-weight: 600;
   color: var(--uci-blue);
   font-size: 1.05rem;
 }
 
-/* Modal layout */
+/* Modal */
 .member-modal-header {
   display: flex;
   gap: 16px;
@@ -323,18 +306,20 @@ nav a:hover {
   height: 120px;
   border-radius: 12px;
   object-fit: cover;
-  display: block;
   border: 1px solid #e9eef5;
 }
 
-/* Email reveal button consistent with site */
+.member-modal .ant-typography {
+  color: #213547;
+}
+
 .email-reveal {
-  padding: 0;
   border: none;
   background: none;
   color: var(--uci-blue);
   cursor: pointer;
   font-weight: 500;
+  padding: 0;
 }
 
 .email-reveal:hover {
@@ -346,13 +331,79 @@ nav a:hover {
   font-weight: 500;
 }
 
-/* Make modal typography match your bodyText */
-.member-modal .ant-typography {
-  color: #213547;
+/* =========================
+   Mobile
+   ========================= */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+
+    width: 220px;
+    max-width: 80vw;
+
+    background-color: var(--uci-dark-blue);
+    border-radius: 0 0 0 12px;
+
+    padding: 0.5rem 0;
+    box-shadow: -4px 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 0.75rem 1.25rem;
+    margin: 0;
+    border-left: 4px solid transparent;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  nav a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: var(--uci-gold);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 
-/* Mobile adjustments */
 @media (max-width: 576px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  main {
+    padding: 1rem;
+    padding-top: calc(var(--header-height) + 0.75rem);
+  }
+
+  header {
+    padding: 0.75rem 1rem;
+  }
+
+  footer {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .site-body,
+  .lab-members {
+    padding: 1rem;
+  }
+
+  .research-banner-wrap {
+    height: 220px;
+  }
+
   .member-tile-img {
     height: 240px;
   }
@@ -366,5 +417,11 @@ nav a:hover {
     width: 100%;
     height: auto;
     max-height: 280px;
+  }
+
+  /* Disable 100vw breakout on small screens */
+  .banner {
+    width: 100%;
+    margin: 0;
   }
 }
