@@ -12,6 +12,12 @@ const bodyText = {
 
 const pubs = [
   {
+    title: "Kauro, a graph-based chatbot for high-fidelity information transmission conversations.",
+    journal: "medRxiv",
+    rest: "2026 Feb 02. King CH, Barrick R, Almalvez M, Blanco K, De Dios I, Fusaro V, Delot E, Donohue C, LoTempio J",
+    link: "https://doi.org/10.64898/2026.01.30.25342358",
+  },
+  {
     title: "Impact of the 23andMe bankruptcy on preserving the public benefit of scientific data.",
     journal: "Nature Genetics",
     rest: "2025. LoTempio J, Donohue C, Moreno J, Santos Rutschman A, Sarnoff J, Sinha MS, Stoeger T, Contreras JL.",
